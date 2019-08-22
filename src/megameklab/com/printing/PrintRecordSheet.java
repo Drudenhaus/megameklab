@@ -106,7 +106,7 @@ public abstract class PrintRecordSheet implements Printable {
     /**
      * Creates an SVG object for the record sheet
      * 
-     * @param startPage The print job page number for this sheet
+     * @param firstPage The print job page number for this sheet
      * @param options Overrides the global options for which elements are printed 
      */
     protected PrintRecordSheet(int firstPage, RecordSheetOptions options) {
@@ -274,7 +274,7 @@ public abstract class PrintRecordSheet implements Printable {
     /**
      * Renders the sheet to the Graphics object.
      * 
-     * @param graphics   The graphics object passed by {@link Printable#print(Graphics, PageFormat, int) print}
+     * @param g2d   The graphics object passed by {@link Printable#print(Graphics, PageFormat, int) print}
      * @param pageFormat The page format passed by {@link Printable#print(Graphics, PageFormat, int) print}
      * @param pageNum    Indicates which page of multi-page sheets to print. The first page is 0.
      * 
@@ -898,7 +898,7 @@ public abstract class PrintRecordSheet implements Printable {
     /**
      * Creates a new set pip row regions sized according to the scaling factor.
      * 
-     * @param list  The rectangular regions describing pip rows in the SVG diagram.
+     * @param rows  The rectangular regions describing pip rows in the SVG diagram.
      * @param scale The scaling factor
      * @return      A list of rectangular regions scaled according to the provided factor.
      */
