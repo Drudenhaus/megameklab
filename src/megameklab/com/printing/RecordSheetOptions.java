@@ -22,17 +22,27 @@ import megameklab.com.util.CConfig;
  *
  */
 public class RecordSheetOptions {
-    
+
+    private boolean tables = false;
     private boolean quirks = true;
     private boolean pilotData = true;
     private boolean eraIcon = true;
     private boolean role = true;
     
     public RecordSheetOptions() {
+        this.tables = CConfig.getBooleanParam(CConfig.RS_SHOW_TABLES);
         this.quirks = CConfig.getBooleanParam(CConfig.RS_SHOW_QUIRKS);
         this.pilotData = CConfig.getBooleanParam(CConfig.RS_SHOW_PILOT_DATA);
         this.eraIcon = CConfig.getBooleanParam(CConfig.RS_SHOW_ERA);
         this.role = CConfig.getBooleanParam(CConfig.RS_SHOW_ROLE);
+    }
+
+    public boolean showTables(){
+        return this.tables;
+    }
+
+    public void setTables(boolean showTables){
+        this.tables = showTables;
     }
     
     public boolean showQuirks() {
