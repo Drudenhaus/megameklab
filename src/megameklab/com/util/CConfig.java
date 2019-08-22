@@ -77,6 +77,7 @@ public class CConfig {
     public static final String RS_SHOW_PILOT_DATA = "rs_show_pilot_data";
     public static final String RS_SHOW_ERA = "rs_show_era";
     public static final String RS_SHOW_ROLE = "rs_show_role";
+    public static final String RS_SHOW_TABLES = "rs_show_tables";
 
     private static Properties config;// config. player values.
 
@@ -115,6 +116,7 @@ public class CConfig {
                 new File(System.getProperty("user.dir").toString()
                         + "/data/mechfiles/").getAbsolutePath());
         defaults.setProperty(SUMMARY_FORMAT_TRO, Boolean.toString(true));
+        defaults.setProperty(RS_SHOW_TABLES, Boolean.toString(true));
         defaults.setProperty(RS_SHOW_QUIRKS, Boolean.toString(true));
         defaults.setProperty(RS_SHOW_ERA, Boolean.toString(true));
         defaults.setProperty(RS_SHOW_ROLE, Boolean.toString(true));

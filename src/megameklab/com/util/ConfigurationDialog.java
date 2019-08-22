@@ -70,6 +70,7 @@ public final class ConfigurationDialog extends JDialog implements ActionListener
     
     private final JComboBox<String> cbFont = new JComboBox<>();
     private final JTextArea txtFontDisplay = new JTextArea();
+    private final JCheckBox chkShowTables = new JCheckBox();
     private final JCheckBox chkShowQuirks = new JCheckBox();
     private final JCheckBox chkShowPilotData = new JCheckBox();
     private final JCheckBox chkShowEraIcon = new JCheckBox();
@@ -222,6 +223,12 @@ public final class ConfigurationDialog extends JDialog implements ActionListener
         
         gbc.gridx = 0;
         gbc.gridy++;
+        chkShowTables.setText(resourceMap.getString("ConfigurationDialog.chkShowTables.text"));
+        chkShowTables.setToolTipText(resourceMap.getString("ConfigurationDialog.chkShowTables.tooltip"));
+        chkShowTables.setSelected(CConfig.getBooleanParam(CConfig.RS_SHOW_TABLES));
+        panPrinting.add(chkShowTables, gbc);
+        gbc.gridy++;
+
         chkShowQuirks.setText(resourceMap.getString("ConfigurationDialog.chkShowQuirks.text"));
         chkShowQuirks.setToolTipText(resourceMap.getString("ConfigurationDialog.chkShowQuirks.tooltip"));
         chkShowQuirks.setSelected(CConfig.getBooleanParam(CConfig.RS_SHOW_QUIRKS));
